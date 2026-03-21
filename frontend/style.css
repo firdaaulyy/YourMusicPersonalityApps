@@ -1,0 +1,73 @@
+:root {
+    --bg-dark: #121212;
+    --card-dark: #181818;
+    --spotify-green: #1DB954;
+    --text-white: #FFFFFF;
+    --text-gray: #B3B3B3;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.green { color: var(--spotify-green); }
+
+h1 { font-size: 2rem; margin-bottom: 8px; }
+
+p { color: var(--text-gray); margin-bottom: 24px; }
+
+button {
+    background-color: var(--spotify-green);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover { transform: scale(1.05); background-color: #1ed760; }
+
+.hidden { display: none; }
+
+.card {
+    background-color: var(--card-dark);
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.tracks ul { list-style: none; padding: 0; margin: 0; }
+
+.tracks li {
+    padding: 8px 0;
+    border-bottom: 1px solid #282828;
+    color: var(--text-white);
+    font-size: 0.9rem;
+}
+
+.analysis p {
+    color: var(--text-white);
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+}
+
+footer { margin-top: 40px; font-size: 0.8rem; }
