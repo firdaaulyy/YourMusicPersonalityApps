@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="mouse-glow"></div>
     <div class="container">
         <header>
-            <h1>YourMusic<span class="green">-Based</span> Personality</h1>
+            <h1>YourMusic<span class="green"> Personality</span></h1>
             <p>Discover your inner self through your Spotify rhythm.</p>
         </header>
 
@@ -17,6 +18,11 @@
             <button id="analyzeBtn">Connect & Analyze My Soul</button>
 
             <div id="resultArea" class="hidden">
+                <div class="card">
+                    <h3>Now Listening</h3>
+                <div id="spotifyPlayer"></div> 
+            </div>
+
                 <div class="card tracks">
                     <h3>Your Recent Favorites</h3>
                     <ul id="trackList"></ul>
@@ -30,9 +36,10 @@
         </main>
 
         <footer>
-            <p>Thank u</p>
+            <p>Belum punya footer</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="js/effect.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

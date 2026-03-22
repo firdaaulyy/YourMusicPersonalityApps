@@ -23,7 +23,7 @@ body {
     text-align: center;
 }
 
-.green { color: var(--spotify-green); }
+.green { color: var(--spotify-green); font-style: italic;}
 
 h1 { font-size: 2rem; margin-bottom: 8px; }
 
@@ -58,7 +58,6 @@ button:hover { transform: scale(1.05); background-color: #1ed760; }
 
 .tracks li {
     padding: 8px 0;
-    border-bottom: 1px solid #282828;
     color: var(--text-white);
     font-size: 0.9rem;
 }
@@ -71,3 +70,64 @@ button:hover { transform: scale(1.05); background-color: #1ed760; }
 }
 
 footer { margin-top: 40px; font-size: 0.8rem; }
+
+.track-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 20px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    font-size: 0.95rem;
+    background-color: #181818;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid transparent; 
+}
+
+.track-item:hover {
+    transform: translateY(-5px) scale(1.02); 
+    background-color: #282828; 
+    border-color: var(--spotify-green); 
+    box-shadow: 0 8px 25px rgba(27, 223, 95, 0.4); 
+    padding-left: 25px; 
+}
+
+.play-icon {
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.track-item:hover .play-icon {
+    opacity: 1;
+}
+
+#spotifyPlayer {
+    min-height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ==== STYLE BACKGROUND DENGAN EFEK BLUR ====*/
+.trail-particle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1; /* Simpan di belakang teks/tombol*/
+    background: radial-gradient(circle, var(--spotify-green) 0%, transparent 70%);
+    filter: blur(15px); 
+    mix-blend-mode: screen; 
+    box-shadow: 0 0 50px 20px #19be531a; 
+    transform: translate(-50%, -50%);
+    transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out;
+}
