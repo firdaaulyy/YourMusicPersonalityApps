@@ -36,18 +36,36 @@ async def analyze_personality():
     try:
         sp = get_spotify_client()
         
-        # Ambil 5 lagu teratas (short_term = 4 minggu terakhir)
-        top_tracks = sp.current_user_top_tracks(limit=5, time_range='short_term')
-        track_list = [f"{t['name']} by {t['artists'][0]['name']}" for t in top_tracks['items']]
+        # Ambil 5 lagu teratas (short_term = 4 minggu terakhir, medium_term = 6 bulan terakhir)
+        results = sp.current_user_top_tracks(limit=5, time_range='medium_term')
+        track_names = []
+        track_ids = []
+
+        for item in results['items']:
+            track_names.append(f"{item['name']} by {item['artists'][0]['name']}")
+            track_ids.append(item['id'])
         
-        if not track_list:
+        if not results:
             return {"status": "error", "message": "No listening history found."}
 
         # Prompt untuk Gemini AI
         prompt = (
-            f"As a professional music psychologist, analyze the personality of a person who frequently listens to: "
-            f"{', '.join(track_list)}. Write a deep, friendly, and poetic analysis in Indonesian. "
-            f"Maximum 150 words. Do not use any asterisks (*) or special characters for formatting."
+            "Kamu adalah seorang psikolog musik yang peka, mendalam, dan intuitif. "
+
+            "Berdasarkan lagu-lagu favorit berikut: "
+            f"{', '.join(track_names)}, "
+
+            "analisis kepribadian pendengarnya secara personal dengan menggunakan kata 'kamu'. "
+            "Awali dengan sapaan hangat yang singkat (contoh: 'Untukmu yang...,' atau 'Hai kamu,'). "
+
+            "Pisahkan tulisan menjadi 2 hingga 3 baris pendek agar mudah dibaca, seperti refleksi. "
+            "Gunakan gaya bahasa yang hangat, emosional, dan sedikit melankolis, seperti tahu betul kepribadian seseorang. "
+
+            "Fokus pada emosi, pola pikir, dan cara kamu berhubungan dengan orang lain. "
+            "Buat seolah-olah kamu benar-benar memahami isi hati mereka. "
+
+            "Maksimal 200 kata. "
+            "Jangan gunakan bullet point, tanda bintang, atau simbol khusus. Hanya teks biasa."
         )
 
         # Generate Content menggunakan Gemini
@@ -58,7 +76,8 @@ async def analyze_personality():
 
         return {
             "status": "success",
-            "tracks": track_list,
+            "tracks": track_names,
+            "track_ids": track_ids,
             "analysis": response.text
         }
 
