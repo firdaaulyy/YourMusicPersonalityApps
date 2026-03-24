@@ -37,7 +37,7 @@ async def analyze_personality():
         sp = get_spotify_client()
         
         # Ambil 5 lagu teratas (short_term = 4 minggu terakhir, medium_term = 6 bulan terakhir)
-        results = sp.current_user_top_tracks(limit=5, time_range='medium_term')
+        results = sp.current_user_top_tracks(limit=5, time_range='short_term')
         track_names = []
         track_ids = []
 

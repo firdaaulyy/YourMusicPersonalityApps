@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourMusic-Based Personality</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font DM Sans-->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Instrument Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="mouse-glow"></div>
@@ -15,8 +21,11 @@
         </header>
 
         <main>
-            <button id="analyzeBtn">Connect & Analyze My Soul</button>
-
+            <div class="buttonHome">
+                <button id="analyzeBtn" class="analyzeBtn">Connect & Analyze My Soul</button>
+                <button id="findBtn" class="findBtn">Find My Music</button>
+            </div>
+            
             <div id="resultArea" class="hidden">
                 <div class="card">
                     <h3>Now Listening</h3>
@@ -36,7 +45,7 @@
         </main>
 
         <footer>
-            <p>Belum punya footer</p>
+            <p></p>
         </footer>
     </div>
     <script src="js/effect.js"></script>

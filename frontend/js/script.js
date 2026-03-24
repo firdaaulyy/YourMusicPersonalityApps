@@ -35,7 +35,10 @@ analyzeBtn.onclick = async () => {
 
             // Show Results
             resultArea.classList.remove('hidden');
-            analyzeBtn.innerText = "Analyze Again";
+            analyzeBtn.innerText = "Analyze Again"
+            
+            // Supaya button find hilang
+            findBtn.remove();
         } else {
             alert("Something went wrong: " + data.message);
             analyzeBtn.innerText = "Connect & Analyze";
@@ -50,7 +53,7 @@ analyzeBtn.onclick = async () => {
 };
 
 // Fungsi untuk merender player Spotify ke dalam kotak "Now Listening"
-function playMusic(id) {
+function updatePlayer(id) {
     const playerContainer = document.getElementById('spotifyPlayer');
     // Kita gunakan URL Embed resmi Spotify
     if (playerContainer){
@@ -65,24 +68,4 @@ function playMusic(id) {
                 loading="lazy">
             </iframe>`;
     }
-}
-
-// Di dalam analyzeBtn.onclick (setelah dapat data dari backend)
-if (data.status === "success") {
-    const list = document.getElementById('trackList');
-    
-    // Render list lagu agar setiap baris bisa diklik
-    list.innerHTML = data.tracks.map((track, i) => `
-        <div class="track-item" onclick="updatePlayer('${data.track_ids[i]}')">
-            <span>${track}</span>
-            <span class="play-icon">▶</span>
-        </div>
-    `).join('');
-
-    // Secara default, putar lagu pertama dari list
-    playMusic(data.track_ids[0]);
-
-    // Tampilkan sisanya
-    document.getElementById('analysisContent').innerText = data.analysis;
-    document.getElementById('resultArea').classList.remove('hidden');
 }

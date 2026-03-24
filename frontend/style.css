@@ -7,14 +7,20 @@
 }
 
 body {
-    background-color: var(--bg-dark);
     color: var(--text-white);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* Untuk background */
+    background: 
+        radial-gradient(circle at left top, rgba(0, 255, 128, 0.089), transparent 500px),
+
+        var(--bg-dark); /* base hitam */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -23,38 +29,75 @@ body {
     text-align: center;
 }
 
-.green { color: var(--spotify-green); font-style: italic;}
-
-h1 { font-size: 2rem; margin-bottom: 8px; }
-
-p { color: var(--text-gray); margin-bottom: 24px; }
-
-button {
-    background-color: var(--spotify-green);
-    color: #000;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease;
+.green { 
+    color: var(--spotify-green); 
+    font-style: italic;
+    font-family: 'Instrument Serif', sans-serif;
+    font-weight: 400;
 }
 
-button:hover { transform: scale(1.05); background-color: #1ed760; }
+h1 { 
+    font-size: 3rem; 
+    margin-bottom: 8px; 
+}
+
+p { 
+    color: var(--text-gray); 
+    margin-bottom: 24px; 
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 28px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(0, 255, 128, 0.363),rgba(29, 185, 84, 0.6), rgba(0, 255, 128, 0.185));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.buttonHome {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  align-items: center; 
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 255, 128, 0.3);
+}
 
 .hidden { display: none; }
 
 .card {
-    background-color: var(--card-dark);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.007),rgba(227, 255, 237, 0.089), rgba(241, 255, 248, 0.041), rgba(227, 255, 237, 0.178));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 24px;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 20px;
     text-align: left;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-.tracks ul { list-style: none; padding: 0; margin: 0; }
+.card h3{
+    font-size: 1.5rem;
+}
+.tracks ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
 
 .tracks li {
     padding: 8px 0;
@@ -62,6 +105,7 @@ button:hover { transform: scale(1.05); background-color: #1ed760; }
     font-size: 0.9rem;
 }
 
+/* Personality Analize */
 .analysis p {
     color: var(--text-white);
     line-height: 1.6;
@@ -69,8 +113,20 @@ button:hover { transform: scale(1.05); background-color: #1ed760; }
     margin: 0;
 }
 
-footer { margin-top: 40px; font-size: 0.8rem; }
+.analysis:hover {
+    transform: translateY(-5px) scale(1.02); 
+    border-color: var(--spotify-green); 
+    box-shadow: 0 8px 25px rgba(27, 223, 95, 0.4); 
+    padding-left: 25px; 
+    transition: 1s;
+}
 
+footer { 
+    margin-top: 40px; 
+    font-size: 0.8rem; 
+}
+
+/* Daftar track 5 lagu teratas */
 .track-item {
     display: flex;
     justify-content: space-between;
@@ -105,6 +161,7 @@ footer { margin-top: 40px; font-size: 0.8rem; }
     opacity: 1;
 }
 
+/* Spotify player terintegrasi API */
 #spotifyPlayer {
     min-height: 152px;
     display: flex;
@@ -114,7 +171,7 @@ footer { margin-top: 40px; font-size: 0.8rem; }
     overflow: hidden;
 }
 
-/* ==== STYLE BACKGROUND DENGAN EFEK BLUR ====*/
+/* Style background dengan efek blur */
 .trail-particle {
     position: fixed;
     top: 0;
