@@ -3,6 +3,7 @@ const resultArea = document.getElementById('resultArea');
 const trackList = document.getElementById('trackList');
 const analysisContent = document.getElementById('analysisContent');
 
+// Fitur Connect & Analyze My Soul
 analyzeBtn.onclick = async () => {
     // UI State Loading
     analyzeBtn.disabled = true;
@@ -51,6 +52,16 @@ analyzeBtn.onclick = async () => {
         analyzeBtn.disabled = false;
     }
 };
+
+// Fitur Find My Music
+findBtn.addEventListener('click', () => {
+    const findBtn = document.getElementById('findBtn');
+    const buttonHome = document.getElementById('buttonHome');
+    const findMusicSection = document.getElementById('find-music-section');
+
+    buttonHome.style.display = 'none';
+    findMusicSection.style.display = 'block';
+})
 
 // Fungsi untuk merender player Spotify ke dalam kotak "Now Listening"
 function updatePlayer(id) {

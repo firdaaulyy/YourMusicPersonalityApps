@@ -17,7 +17,6 @@ body {
     /* Untuk background */
     background: 
         radial-gradient(circle at left top, rgba(0, 255, 128, 0.089), transparent 500px),
-
         var(--bg-dark); /* base hitam */
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,9 +40,14 @@ h1 {
     margin-bottom: 8px; 
 }
 
+h2 {
+    font-size: 2.3rem;
+}
+
 p { 
     color: var(--text-gray); 
-    margin-bottom: 24px; 
+    margin-bottom: 30px; 
+    font-size: 14px;
 }
 
 button {
@@ -58,7 +62,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -187,4 +191,50 @@ footer {
     box-shadow: 0 0 50px 20px #19be531a; 
     transform: translate(-50%, -50%);
     transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out;
+}
+
+/* Fitur Find My Music */
+#find-music-section {
+    display: none;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+#musicForm button {
+    margin: auto;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    background-color: #282828; /* Lebih terang sedikit dari card */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat input diklik/fokus */
+.input-group input:focus, 
+.input-group select:focus {
+    outline: none;
+    border-color: var(--spotify-green);
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.2);
 }

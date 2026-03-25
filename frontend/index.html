@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourMusic-Based Personality</title>
+    <title>YourMusic-Personality</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- Font DM Sans-->
@@ -21,11 +21,12 @@
         </header>
 
         <main>
-            <div class="buttonHome">
+            <div class="buttonHome" id="buttonHome">
                 <button id="analyzeBtn" class="analyzeBtn">Connect & Analyze My Soul</button>
                 <button id="findBtn" class="findBtn">Find My Music</button>
             </div>
             
+            <!-- Analyze My Soul -->
             <div id="resultArea" class="hidden">
                 <div class="card">
                     <h3>Now Listening</h3>
@@ -41,6 +42,42 @@
                     <h3>AI Psychological Insight</h3>
                     <p id="analysisContent"></p>
                 </div>
+            </div>
+
+            <!-- Find My Music -->
+            <div id="find-music-section" class="card">
+                <h2><span class="green">Find</span> YourMusic</h2>
+                <p>Masukkan selera musikmu, dan AI akan membuatkan playlist untukmu</p>
+                
+                <form id="musicForm">
+                    <div class="input-group">
+                        <label>Lagu Favorit (Judul - Artis)</label>
+                        <input type="text" id="favTrack" placeholder="Contoh: Die With A Smile - Bruno Mars" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Genre Utama</label>
+                        <select id="genre">
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="hip-hop">Hip Hop</option>
+                            <option value="indie">Indie</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Penyanyi/Band Favorit</label>
+                        <input type="text" id="favArtist" placeholder="Contoh: Nadin Amizah atau Arctic Monkeys" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Vibe Lagu</label>
+                        <input type="text" id="favVibe" placeholder="Contoh: Chill, Energetic, atau Sad Girl" required>
+                    </div>
+
+                    <button class="generateBtn" type="submit" id="generateBtn">Generate Playlist</button>
+                </form>
             </div>
         </main>
 
