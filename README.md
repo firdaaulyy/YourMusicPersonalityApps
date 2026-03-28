@@ -6,19 +6,52 @@ Aplikasi ini tidak hanya menampilkan daftar lagu, tetapi juga bertindak sebagai 
 
 ---
 
-## ✨ Fitur Utama
+### 🧠 Analyze My Soul
+Fitur ini menganalisis kepribadian kamu melalui musik yang kamu dengarkan.
 
-- 🎧 **Integrasi Spotify Real-Time**  
-  Menghubungkan akun Spotify secara aman untuk mengambil data *Top Tracks* pengguna.
+- Mengambil **5 lagu teratas** dari akun Spotify pengguna  
+- Menggunakan **Spotify Web API** untuk data musik  
+- Menggunakan **Google Gemini AI** untuk analisis psikologis  
+- Menghasilkan **narasi kepribadian yang puitis dan mendalam**  
 
-- 🧠 **Analisis Kepribadian AI**  
-  Menggunakan Google Gemini AI untuk menganalisis lirik dan genre lagu, lalu menghasilkan deskripsi kepribadian yang puitis dan mendalam.
+💡 Output:
+- Insight karakter
+- Emosi dominan
+- Pola kepribadian berdasarkan musik
+- Narasi “psikolog musik” yang personal
 
-- ▶️ **Interactive Spotify Player**  
-  Embedded player untuk mendengarkan cuplikan lagu langsung di dalam aplikasi.
+---
 
-- 🌙 **Modern & Responsive UI**  
-  Desain elegan dengan *Dark Mode*, terinspirasi dari Spotify, dan responsif di semua perangkat.
+### 🎧 Find My Music
+Fitur ini membantu kamu menemukan musik yang “kamu banget”.
+
+- Menggunakan pendekatan **AI berbasis CNN + LSTM**
+- Analisis berbasis **audio feature (MFCC / Mel-Frequency Cepstral Coefficients)**
+- Input dari pengguna:
+  - Lagu favorit  
+  - Penyanyi favorit  
+  - Genre  
+  - Vibes / suasana lagu  
+
+💡 Output:
+- Hasil analisis preferensi musik
+- Rekomendasi lagu yang mirip dengan selera pengguna
+- Playlist personal yang relevan
+
+🎵 Bonus:
+- Pengguna dapat **menambahkan lagu langsung ke library Spotify**
+
+---
+
+### ▶️ Interactive Spotify Player
+- Embedded player untuk memutar cuplikan lagu langsung di aplikasi
+
+---
+
+### 🌙 Modern & Responsive UI
+- Desain dark mode elegan
+- Terinspirasi dari Spotify
+- Responsif di desktop & mobile
 
 ---
 
@@ -29,6 +62,7 @@ Aplikasi ini tidak hanya menampilkan daftar lagu, tetapi juga bertindak sebagai 
 | Backend    | FastAPI (Python) |
 | Frontend   | HTML5, CSS3, Vanilla JavaScript |
 | AI Model   | Google Gemini AI |
+| AI Music   | CNN + LSTM (MFCC Feature Extraction) |
 | API        | Spotify Web API (Spotipy) |
 | Server     | Uvicorn |
 
@@ -120,6 +154,7 @@ Jangan pernah upload file `.env` ke GitHub.
 File ini sudah masuk `.gitignore` untuk keamanan.
 
 ---
+<!-- Disini nanti isinya integrasi arsitektur CNN LSTM, isinya tentang untuk menginstal library pip install librosa numpy tensorflow scikit-learn-->
 
 ## 🏃 Menjalankan Aplikasi
 
