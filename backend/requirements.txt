@@ -1,5 +1,18 @@
-fastapi
-uvicorn
-spotipy
-google-genai
-python-dotenv
+# --- Web Framework & Server ---
+fastapi          # Framework utama untuk membangun API project
+uvicorn          # ASGI server untuk menjalankan aplikasi FastAPI
+
+# --- Spotify Integration & Environment ---
+spotipy          # Library untuk akses data musik, playlist, dan user top tracks dari Spotify API
+python-dotenv    # Mengelola API Key dan Secret (Client ID) agar tetap aman di file .env
+
+# --- AI & Generative Language Model ---
+google-genai     # SDK untuk integrasi model Gemini (memberikan narasi kepribadian)
+
+# --- Audio Analysis & Processing ---
+librosa          # Ekstraksi fitur audio (tempo, beat, chroma, dll.) dari file musik
+numpy            # Komputasi numerik untuk memproses array data audio
+
+# --- Machine Learning & Deep Learning ---
+tensorflow       # Framework untuk menjalankan model deep learning (klasifikasi audio/genre)
+scikit-learn     # Tool untuk preprocessing data dan algoritma machine learning tradisional
