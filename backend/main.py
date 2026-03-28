@@ -2,9 +2,12 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from google import genai
+
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
+
+from pydantic import BaseModel
 
 # Load variables dari .env
 load_dotenv()
@@ -36,7 +39,7 @@ async def analyze_personality():
     try:
         sp = get_spotify_client()
         
-        # Ambil 5 lagu teratas (short_term = 4 minggu terakhir, medium_term = 6 bulan terakhir)
+        # Ambil 5 lagu teratas (aku pake short_term = 4 minggu terakhir)
         results = sp.current_user_top_tracks(limit=5, time_range='short_term')
         track_names = []
         track_ids = []
@@ -83,3 +86,23 @@ async def analyze_personality():
 
     except Exception as e:
         return {"status": "error", "message": str(e)}
+    
+# Fitur Find My Music
+class MusicInput(BaseModel):
+    song: str
+    artist: str
+    genre: str
+    vibes: str
+
+@app.post("findMusic")
+def findMusic(data: MusicInput):
+    from services.ai import analyze_music
+    from services.spotify import get_recomendations
+
+    profile = analyze_music(data)
+    songs = get_recomendations(profile)
+    
+    return {
+        "analysis": profile,
+        "recomendations": songs
+    }

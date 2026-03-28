@@ -28,6 +28,7 @@ body {
     text-align: center;
 }
 
+/* Font italic hijau untuk variasi font */
 .green { 
     color: var(--spotify-green); 
     font-style: italic;
